@@ -12,7 +12,8 @@ if [[ -z $ENV || -z $COMMAND ]]; then
   exit 1
 fi
 
-CONFIG_FILE="conf/flyway-$ENV.conf"
+CONFIG_FILE="./conf/$ENV.toml"
+./$FLYWAY_DIR/flyway -configFiles=$CONFIG_FILE info -X 
 
 echo "Running Flyway $COMMAND for $ENV environment"
 ./$FLYWAY_DIR/flyway -configFiles="$CONFIG_FILE" "$COMMAND"
