@@ -52,4 +52,3 @@ fi
 chmod +x "$FLYWAY_DIR/flyway"
 
 echo "Flyway installation and Oracle JDBC driver setup complete!"
-

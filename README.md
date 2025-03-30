@@ -29,14 +29,17 @@ chmod +x flyway_setup.sh
 After running the script, your directory will look like this:
 
 ```
-your-project/
-├── flyway/
-│   ├── flyway              # Flyway executable
-│   ├── drivers/
-│   │   └── ojdbc8.jar      # Oracle JDBC Driver
-│   └── conf/
-│       ├── flyway-dev.conf # Add your environment configs here
-│       └── flyway-prod.conf
+flyway-migration-template/
+│── flyway/                 # Flyway executable
+│── drivers/
+│   └── ojdbc8.jar          # Oracle JDBC Driver
+│── sql/
+│   ├── common/             # Migration and rollback scripts for the environment
+│   └── <env>
+│── conf/
+│   ├── flyway-dev.conf     # Add your environment configs here
+│   └── flyway-prod.conf
+├── db.sh                   # start, stop and restart the db
 ├── flyway.sh               # Helper script to manage migrations
 └── flyway_setup.sh         # Installation script
 ```
