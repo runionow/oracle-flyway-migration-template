@@ -31,17 +31,17 @@ After running the script, your directory will look like this:
 ```
 flyway-migration-template/
 │── flyway/                 # Flyway executable
-│── drivers/
-│   └── ojdbc8.jar          # Oracle JDBC Driver
+│   │── jre/                # Java runtime
+│   └── drivers/            # Oracle JDBC Driver
 │── sql/
 │   ├── common/             # Migration and rollback scripts for the environment
-│   └── <env>
+│   └── <env>               # Repeatable scripts for environment
 │── conf/
-│   ├── flyway-dev.conf     # Add your environment configs here
-│   └── flyway-prod.conf
-├── db.sh                   # start, stop and restart the db
+│   ├── dev.toml            # Add your environment configs here
+│   └── <env>.toml
+├── db.sh                   # start, stop and restart the db in a docker cpntainer
 ├── flyway.sh               # Helper script to manage migrations
-└── flyway_setup.sh         # Installation script
+└── flyway-install.sh       # Installation script
 ```
 
 ---
