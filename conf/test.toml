@@ -4,7 +4,6 @@
 url = "jdbc:oracle:thin:@//localhost:1521/FREEPDB1"
 user = "HR_SERVICE"
 password = "password"
-locations = ["filesystem:sql/commons", "filesystem:sql/dev"]
 # driver =
 # schemas =
 # connectRetries =
@@ -17,7 +16,7 @@ locations = ["filesystem:sql/commons", "filesystem:sql/dev"]
 environment = "default" # It is recommended to configure environment as a commandline argument. This allows using different environments depending on the caller.
 baselineOnMigrate = true
 baselineVersion = 0
-# locations = ["filesystem:path/to/sql/files"]
+locations = ["filesystem:./sql/common", "filesystem:./sql/dev"]
 # jarDirs = ["path/to/java/migrations"]
 
 # [environments.build]

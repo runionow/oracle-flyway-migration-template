@@ -11,7 +11,7 @@ function start_container() {
       docker start $CONTAINER_NAME
     else
       echo "Creating and starting Oracle 23ai Docker container..."
-      docker run -d --name $CONTAINER_NAME -p 1521:1521 -e ORACLE_PWD=$ORACLE_PASSWORD -e ENABLE_ARCHIVELOG=true -e ENABLE_FORCE_LOGGING=true $ORACLE_IMAGE
+      docker run -d --name $CONTAINER_NAME -p 1521:1521 -e ORACLE_PWD=$ORACLE_PASSWORD -e ENABLE_ARCHIVELOG=true -e ENABLE_FORCE_LOGGING=true -v ./startup:/opt/oracle/scripts/startup -v ./setup:/opt/oracle/scripts/setup $ORACLE_IMAGE
     fi
 
     # Show container status
