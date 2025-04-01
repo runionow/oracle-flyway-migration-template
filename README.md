@@ -36,6 +36,8 @@ flyway-migration-template/
 │── sql/
 │   ├── common/             # Migration and rollback scripts for the environment
 │   └── <env>               # Repeatable scripts for environment
+│── startup/                # Automatically runs the scripts whenever the container start/restart
+│── setup/                  # Runs the scripts when the container is started for the 1st time
 │── conf/
 │   ├── dev.toml            # Add your environment configs here
 │   └── <env>.toml
